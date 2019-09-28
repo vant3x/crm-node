@@ -1,0 +1,67 @@
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid pmx mdl-grid--no-spacing">
+	<div class="mdl-layout">
+	  <h3 class="title-2 mb mto">Nuevo Cliente</h3>
+	  {{#each errores}}
+			<div class="alerta alerta-error">
+				<p>{{text}}</p>
+			</div>
+	  {{/each}}
+	   <form action="/clientes/nuevo-cliente"  method="POST" class="animated fadeIn" >
+                <legend>Llena todos los campos</legend>
+                <div class="campo">
+                    <label>Nombre:</label>
+                    <input
+                         type="text" 
+                         placeholder="Nombre Cliente" 
+                         name="nombre" 
+
+                    />
+                </div>
+
+                <div class="campo">
+                    <label>Apellido:</label>
+                    <input 
+                        type="text" 
+                        placeholder="Apellido Cliente" 
+                        name="apellido"
+                     />
+                </div>
+
+                <div class="campo">
+                    <label>Empresa:</label>
+                    <input 
+                        type="text"
+                         placeholder="Empresa Cliente" 
+                         name="empresa" 
+                    />
+                </div>
+
+                <div class="campo">
+                    <label>Email:</label>
+                    <input
+                         type="email" 
+                         placeholder="Email Cliente" 
+                         name="email" 
+                    />
+                </div>
+
+                <div class="campo">
+                    <label>Telefono:</label>
+                    <input type="number" 
+                        placeholder="Telefono Cliente" 
+                        name="telefono" 
+                    />
+                </div>
+				
+                <div class="enviar">
+                    <input type="submit" 
+                        class="btn btn-azul" 
+                        value="Agregar Cliente" 
+                    />
+                </div>
+            </form>
+            <div class="mb"></div>
+
+            
+	</div>
+</div>

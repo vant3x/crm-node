@@ -1,0 +1,52 @@
+     <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid pmx mdl-grid--no-spacing">
+         <div class="mdl-layout">
+             <h3 class="title-2 mb mto">Clientes</h3>
+       
+        <!-- info cliente -->
+            <a  href="/clientes/nuevo"
+                class="btn btn-verde nvo-cliente mb btn-md">
+                    <i class="fas fa-plus-circle"></i> Nuevo Cliente
+            </a>
+            
+            <!--  modal -->
+            
+           <ul class="listado-clientes mb">
+
+               {{#each clientes}}
+             <li class="cliente animated fadeIn">
+                <div class="info-cliente">
+                    <p class="nombre pri-col">{{nombre}} {{apellido}}</p>
+                    <p class="empresa">{{empresa}}</p>
+                    <p>{{email}}</p>
+                    <p>{{telefono}}</p>
+                </div>
+                <div class="acciones">
+                    
+                    <a href="/clientes/editar/{{_id}}" class="btn btn-azul"> 
+                         <i class="fas fa-pen"></i> Editar Cliente
+                    </a>
+
+                    <a href="/pedidos/nuevo/${_id}" class="btn btn-azul-claro bg-blue margin-tb2"> 
+                         <i class="fas fa-plus"></i> Nuevo Pedido
+                    </a>
+                    <form class="none-display" action="/clientes/{{_id}}?_method=DELETE" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button
+                            type="submit" 
+                            class="btn btn-rojo" 
+                          >
+                            <i class="fas fa-times"></i> 
+                            Eliminar Cliente
+                        </button>
+                    </form>
+                </div>
+            </li>
+            
+              {{else}}
+              <h3>No hay clientes aún, crea uno por favor</h3>
+              {{/each}}
+           </ul>
+           
+         </div>
+            <!-- clientes fin -->
+     </div>

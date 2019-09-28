@@ -1,0 +1,42 @@
+    
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid pmx mdl-grid--no-spacing">
+         <div class="mdl-layout">
+             <h3 class="title-2 mb mto">Productos</h3>
+
+             <!-- productos -->
+                <a  href="/productos/nuevo"
+                        class="btn btn-verde nvo-cliente mb btn-xs">
+                            <i class="fas fa-plus-circle"></i> Nuevo Producto
+                 </a>
+            <div class="listado-productos mb">
+
+                 {{#each productos}}
+                    <!-- producto -->
+                            <li class="producto animated fadeIn">
+                                <div class="info-producto">
+                                    <p class="nombre">{{nombre}}</p>
+                                    <p class="precio">$ {{precio}}</p>
+                                        <img class="img-producto" src="http://localhost:5000/{{imagen}}" alt=""/>
+                                </div>
+                                <div class="acciones">
+                                    <a href="/productos/editar/${_id}" class="btn btn-azul margin-tb"> 
+                                        <i class="fas fa-pen"></i> Editar Producto
+                                    </a>
+                                    <button  
+                                        class="btn btn-rojo" 
+                                        
+                                        >
+                                        <i class="fas fa-times"></i> 
+                                        Eliminar Producto
+                                    </button>
+                                </div>
+                            </li>
+                    <!-- fin producto -->
+                  
+                 {{else}}
+                <h3>No hay productos aún, crea uno por favor</h3>
+                 {{/each}}     
+            </div>       
+
+        </div>
+</div>

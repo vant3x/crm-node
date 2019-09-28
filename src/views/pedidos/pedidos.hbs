@@ -1,0 +1,46 @@
+    
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid pmx mdl-grid--no-spacing">
+         <div class="mdl-layout">
+             <h3 class="title-2 mb mto">Pedidos</h3>
+             <ul class="listado-pedidos">
+            {{#each pedidos}}
+            <li class="pedido">
+            <div class="info-pedido mb">
+                    <p class="id">ID: {{id}}</p>
+                    <p class="nombre">Cliente: {{ cliente.nombre }} {{ cliente.apellido }} </p>
+
+                    <div class="articulos-pedido">
+                        <p class="productos">Artículos Pedido: </p>
+                        <ul  class="margin-lr">
+                            
+                                    {{#each pedido}}
+                                    <li>
+                                        <p>{{producto.nombre}}</p>
+                                        <p>Precio: <span class="span-blue">${{producto.precio}}</span></p>
+                                        <p>Cantidad: <span class="span-blue">{{cantidad}}</span></p>
+                                    </li>
+                                    {{/each}}
+                                
+                        </ul>
+                    </div>
+                    <p class="total">Total: ${{total}} </p>
+                </div>
+                <div class="acciones">
+                    <a href="#" class="btn btn-azul btn-sm">
+                        <i class="fas fa-pen"></i>
+                        Editar Pedido
+                    </a>
+
+                    <button type="button" 
+                        class="btn btn-rojo btn-eliminar btn-sm"
+                       
+                    >
+                        <i class="fas fa-times"></i>
+                        Cancelar Pedido
+                    </button>
+                </div>
+            </li>
+            {{/each}}
+             </ul>
+        </div>
+</div>

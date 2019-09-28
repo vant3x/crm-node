@@ -1,0 +1,73 @@
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid pmx mdl-grid--no-spacing">
+	<div class="mdl-layout">
+	  <h3 class="title-2 mb mto">Editar Cliente</h3>
+	  {{#each errores}}
+			<div class="alerta alerta-error">
+				<p>{{text}}</p>
+			</div>
+	  {{/each}}
+	   <form  class="none-display" action="/clientes/{{cliente._id}}?_method=PUT"  method="POST" class="animated fadeIn" >
+                <input type="hidden" name="_method" value="PUT">
+                <legend>Llena todos los campos</legend>
+                <div class="campo">
+                    <label>Nombre:</label>
+                    <input
+                         type="text" 
+                         placeholder="Nombre Cliente" 
+                         name="nombre" 
+                         value={{cliente.nombre}}
+            
+                    />
+                </div>
+
+                <div class="campo">
+                    <label>Apellido:</label>
+                    <input 
+                        type="text" 
+                        placeholder="Apellido Cliente" 
+                        name="apellido"
+                        value={{{cliente.apellido}}}
+                     />
+                </div>
+
+                <div class="campo">
+                    <label>Empresa:</label>
+                    <input 
+                        type="text"
+                         placeholder="Empresa Cliente" 
+                         name="empresa" 
+                         value={{cliente.empresa}}
+                    />
+                </div>
+
+                <div class="campo">
+                    <label>Email:</label>
+                    <input
+                         type="email" 
+                         placeholder="Email Cliente" 
+                         name="email" 
+                         value={{cliente.email}}
+                    />
+                </div>
+
+                <div class="campo">
+                    <label>Telefono:</label>
+                    <input type="number" 
+                        placeholder="Telefono Cliente" 
+                        name="telefono" 
+                        value={{cliente.telefono}}
+                    />
+                </div>
+				
+                <div class="enviar">
+                    <input type="submit" 
+                        class="btn btn-azul" 
+                        value="Guardar Cambios" 
+                    />
+                </div>
+            </form>
+            <div class="mb"></div>
+
+            
+	</div>
+</div>
